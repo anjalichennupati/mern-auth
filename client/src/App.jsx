@@ -4,17 +4,19 @@ import About from './pages/About';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Profile from 'E:/3rd Year/5th Sem/DBMS/End Sem/mern-auth/client/src/pages/Profile.jsx';
+import Header from './components/Header';
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/sign-in' element={<SignIn />} />
-        <Route path='/sign-up' element={<SignUp />} />
-        <Route path='/profile' element={<Profile />} />
-      </Routes>
+      <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/sign-in' element={<SignIn />} />
+          <Route path='/sign-up' element={<SignUp />} />
+          <Route path='/profile' element={<Profile />} />
+        </Routes>
     </BrowserRouter>
   );
 }
