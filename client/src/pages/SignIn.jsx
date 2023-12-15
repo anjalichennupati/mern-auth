@@ -27,7 +27,7 @@ export default function SignIn() {
         setError(true);
         return;
       }
-      navigate('/');
+      navigate('/details');
     } catch (error) {
       setLoading(false);
       setError(true);
@@ -51,7 +51,7 @@ export default function SignIn() {
           className='bg-slate-100 p-3 rounded-lg'
           onChange={handleChange}
         />
-        <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
+        <button disabled={loading} className='bg-green-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
           {loading ? 'Loading...' : 'Sign In'}
         </button>
       </form>

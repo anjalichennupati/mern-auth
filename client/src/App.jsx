@@ -5,6 +5,10 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Profile from 'E:/3rd Year/5th Sem/DBMS/End Sem/mern-auth/client/src/pages/Profile.jsx';
 import Header from './components/Header';
+import Details from './pages/Details';
+import InsertData from './pages/InsertData';
+import GenerateQR from './pages/GenerateQR';
+
 
 export default function App() {
   return (
@@ -16,6 +20,9 @@ export default function App() {
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/sign-up' element={<SignUp />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/details' element={<Details />} />
+          <Route path='/insert-data' element={<InsertData />} />
+          <Route path='/generate-qr' element={<GenerateQR />} />
         </Routes>
     </BrowserRouter>
   );

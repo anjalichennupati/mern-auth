@@ -1,4 +1,5 @@
 import User from '../models/user.model.js';
+import Blockchain from '../models/data.model.js';
 import bcryptjs from 'bcryptjs';
 import { errorHandler } from '../utils/error.js';
 import jwt from 'jsonwebtoken';
@@ -31,4 +32,12 @@ export const signin = async (req, res, next) => {
     } catch (error) {
       next(error);
     }
+};
+
+// data 
+export const insertdata =async (req,res) => {
+  const { gitag, product}= req.body;
+  const newBlock = new Blockchain({gitag, product});
+  await newBlock.save()
+  res.status(201).json({message: "Details entered successfully"});
 };
