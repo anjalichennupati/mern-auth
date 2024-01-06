@@ -1,22 +1,29 @@
 import { Link } from 'react-router-dom';
-
+import React from 'react';
+import styles from '../style';
+import { Hero, Navbar, Testimonials, Footer} from '../components';
 
 export default function Home() {
   return (
-    <div className='flex flex-col items-center justify-center h-screen'>
-      <h1 className='text-3xl text-center font-semibold my-7'>Home</h1>
-      <div className='flex space-x-4'>
-        <Link to='/sign-in'>
-          <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
-            Admin
-          </button>
-        </Link>
-        <Link to='/user'>
-          <button className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
-            User
-          </button>
-        </Link>
+    <div className="bg-black w-full overflow-hidden">
+      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Navbar />
+        </div>
+      </div>
+
+      <div className={`bg-black ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Hero />
+        </div>
+      </div>
+
+      <div className={`bg-black ${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Testimonials />
+          <Footer />
+        </div>
       </div>
     </div>
-  )
+  );
 }

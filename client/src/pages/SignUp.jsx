@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link , useNavigate} from 'react-router-dom';
+import signupicon from '../assets/signupicon.jpg'; // Adjust the path accordingly
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -32,44 +33,49 @@ export default function SignUp() {
     } catch (error) {
       setLoading(false);
       setError(true);
+      
     }
   };
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl text-center font-semibold my-7'>SignUp</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-      <input
-          type='text'
-          placeholder='Username'
-          id='username'
-          className='bg-slate-100 p-3 rounded-lg'
-          onChange={handleChange}
-        />
-        <input
-          type='email'
-          placeholder='Email'
-          id='email'
-          className='bg-slate-100 p-3 rounded-lg'
-          onChange={handleChange}
-        />
-        <input
-          type='password'
-          placeholder='Password'
-          id='password'
-          className='bg-slate-100 p-3 rounded-lg'
-          onChange={handleChange}
-        />
-        <button disabled={loading} className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'>
-          {loading ? 'Loading...' : 'Sign Up'}
-        </button>
-      </form>
-      <div className='flex gap-2 mt-5'>
-        <p>Have an account?</p>
-        <Link to='/sign-in'>
-          <span className='text-blue-500'>Sign in</span>
-        </Link>
+    <section className="bg-[#0d1b2a] min-h-screen flex items-center justify-center">
+      {/* login container */}
+      <div className="bg-[#f5ebe0] flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+        {/* form */}
+        <div className="md:w-1/2 px-8 md:px-16">
+          <h2 className="font-semibold font-poppins ss:text-[40px] text-[#000000]">Sign Up</h2>
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <input className="p-2 mt-8 rounded-xl border" type="email" id="email" placeholder="Email" onChange={handleChange}/>
+            <div className="relative">
+              <input className="p-2 rounded-xl border w-full" type="password" id="password" placeholder="Password" onChange={handleChange} />
+            </div>
+            <div className='relative'>
+              <input className="p-2 rounded-xl border w-full" type="text" id="username" placeholder="Username" onChange={handleChange} />
+
+            </div>
+            <button className="bg-[#0d1b2a] rounded-xl text-white py-2 hover:scale-105 duration-300">Sign Up</button>
+          </form>
+
+          <div className="mt-6 grid grid-cols-3 items-center text-gray-400">
+            <hr className="border-gray-400" />
+            <p className="text-center text-sm">OR</p>
+            <hr className="border-gray-400" />
+          </div>
+          <div className="mt-3 text-xs flex justify-between items-center text-[#002D74]">
+            <p>Have an account?</p>
+            <Link to='/sign-in'>
+            <button className="py-2 px-5 bg-[#001524] text-[#ffffff] border rounded-xl hover:scale-110 duration-300">Sign In</button>
+
+            </Link>
+          </div>
+        </div>
+
+        {/* image */}
+        <div className="md:block hidden w-1/2">
+          <img className="rounded-2xl" src={signupicon} alt="Login" />
+        </div>
       </div>
-      <p className='text-red-700 mt-5'>{error && 'SignUp Failed, Something is wrong !'}</p>
-    </div>
+    </section>
+
   )
 }
