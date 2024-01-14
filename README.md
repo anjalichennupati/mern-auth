@@ -1,0 +1,1 @@
+This project is a full Stack MERN application that demonstrates the implementation of a real time application of Supply Chain Management using Blockchain. This project employs the usage of GI Tagging for the authentication of the projects.
